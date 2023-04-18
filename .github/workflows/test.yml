@@ -1,0 +1,21 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: '14'
+      - name: Install miredo
+        run: |
+          sudo apt install -y miredo
+          sudo sed -i s/ServerAddress  teredo-debian.remlab.net/ServerAddress teredo.iks-jena.de/ /etc/miredo.conf
+          sudo miredo
+          ip addr
+      - name: Test IPv6
+        run: |
+          curl https://ipv6-only.site/
+          
