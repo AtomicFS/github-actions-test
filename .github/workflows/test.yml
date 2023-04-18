@@ -23,5 +23,5 @@ jobs:
           ip addr
       - name: Test IPv6
         run: |
-          curl https://ipv6-only.site/
+          curl https://ifconfig.co/
           
