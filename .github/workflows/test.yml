@@ -14,6 +14,8 @@ jobs:
           sudo apt install -y miredo
           sudo sed -i 's/ServerAddress  teredo-debian.remlab.net/ServerAddress teredo.iks-jena.de/' /etc/miredo.conf
           sudo miredo
+          cat /etc/miredo.conf
+          sleep 1
           ip addr
       - name: Test IPv6
         run: |
