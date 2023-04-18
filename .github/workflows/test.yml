@@ -23,5 +23,5 @@ jobs:
           ip addr
       - name: Test IPv6
         run: |
-          curl https://ifconfig.co/
+          curl https://ipv6.icanhazip.com
           
