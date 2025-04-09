@@ -1,14 +1,15 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: '14'
+      - uses: actions/checkout@v4
+
+      - name: Check ip
+        run: |
+          ip addr
+
       - name: Install miredo
         run: |
           sudo apt install -y miredo
@@ -21,6 +22,7 @@ jobs:
           ip addr
           sleep 1
           ip addr
+
       - name: Test IPv6
         run: |
           curl https://ipv6.icanhazip.com
